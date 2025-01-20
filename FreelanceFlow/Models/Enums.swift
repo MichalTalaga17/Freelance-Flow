@@ -22,3 +22,6 @@ enum TaskPriority: String {
 enum TaskStatus: String {
     case todo, inProgress, completed
 }
+enum Tab {
+    case overview, projects, tasks, messages
+}

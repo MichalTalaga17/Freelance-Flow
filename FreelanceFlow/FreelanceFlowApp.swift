@@ -26,6 +26,8 @@ struct FreelanceFlowApp: App {
             NavigationView {
                 ContentView()
             }
+            .ignoresSafeArea()
         }
+        
     }
 }

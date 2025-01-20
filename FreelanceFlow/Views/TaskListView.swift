@@ -14,8 +14,8 @@ struct TaskListView: View {
     var body: some View {
         VStack {
              if viewModel.isLoading {
-                ProgressView()
-            } else if !viewModel.error.isEmpty {
+                 LoadingView()
+             } else if !viewModel.error.isEmpty {
                 Text("Error: \(viewModel.error)")
             } else {
                  List {
@@ -27,6 +27,7 @@ struct TaskListView: View {
                 }
              }
         }
+        .scrollContentBackground(.hidden)
     }
 }
 

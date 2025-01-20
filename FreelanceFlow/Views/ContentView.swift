@@ -12,7 +12,9 @@ struct ContentView: View {
         NavigationView {
            AppTabView()
         }
+        .ignoresSafeArea()
     }
+        
 }
 
 #Preview {
