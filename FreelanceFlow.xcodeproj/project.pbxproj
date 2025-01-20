@@ -6,12 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		472921472D3DBA47004EB8E6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 472921462D3DBA47004EB8E6 /* FirebaseAnalytics */; };
+		472921492D3DBA47004EB8E6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 472921482D3DBA47004EB8E6 /* FirebaseAuth */; };
+		4729214B2D3DBA47004EB8E6 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4729214A2D3DBA47004EB8E6 /* FirebaseCore */; };
+		4729214D2D3DBA47004EB8E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 4729214C2D3DBA47004EB8E6 /* FirebaseDatabase */; };
+		4729214F2D3DBA47004EB8E6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 4729214E2D3DBA47004EB8E6 /* FirebaseFunctions */; };
+		472921512D3DBA47004EB8E6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 472921502D3DBA47004EB8E6 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		4704D41C2D3DCCD800D6CF38 /* FreelanceFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreelanceFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		472921202D3C6424004EB8E6 /* FreelanceFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreelanceFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4704D41E2D3DCCD800D6CF38 /* FreelanceFlow */ = {
+		472921222D3C6424004EB8E6 /* FreelanceFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = FreelanceFlow;
 			sourceTree = "<group>";
@@ -19,28 +28,34 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4704D4192D3DCCD800D6CF38 /* Frameworks */ = {
+		4729211D2D3C6424004EB8E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472921472D3DBA47004EB8E6 /* FirebaseAnalytics in Frameworks */,
+				4729214B2D3DBA47004EB8E6 /* FirebaseCore in Frameworks */,
+				4729214F2D3DBA47004EB8E6 /* FirebaseFunctions in Frameworks */,
+				4729214D2D3DBA47004EB8E6 /* FirebaseDatabase in Frameworks */,
+				472921492D3DBA47004EB8E6 /* FirebaseAuth in Frameworks */,
+				472921512D3DBA47004EB8E6 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4704D4132D3DCCD800D6CF38 = {
+		472921172D3C6424004EB8E6 = {
 			isa = PBXGroup;
 			children = (
-				4704D41E2D3DCCD800D6CF38 /* FreelanceFlow */,
-				4704D41D2D3DCCD800D6CF38 /* Products */,
+				472921222D3C6424004EB8E6 /* FreelanceFlow */,
+				472921212D3C6424004EB8E6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4704D41D2D3DCCD800D6CF38 /* Products */ = {
+		472921212D3C6424004EB8E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4704D41C2D3DCCD800D6CF38 /* FreelanceFlow.app */,
+				472921202D3C6424004EB8E6 /* FreelanceFlow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +63,73 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4704D41B2D3DCCD800D6CF38 /* FreelanceFlow */ = {
+		4729211F2D3C6424004EB8E6 /* FreelanceFlow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4704D42A2D3DCCD900D6CF38 /* Build configuration list for PBXNativeTarget "FreelanceFlow" */;
+			buildConfigurationList = 4729212E2D3C6425004EB8E6 /* Build configuration list for PBXNativeTarget "FreelanceFlow" */;
 			buildPhases = (
-				4704D4182D3DCCD800D6CF38 /* Sources */,
-				4704D4192D3DCCD800D6CF38 /* Frameworks */,
-				4704D41A2D3DCCD800D6CF38 /* Resources */,
+				4729211C2D3C6424004EB8E6 /* Sources */,
+				4729211D2D3C6424004EB8E6 /* Frameworks */,
+				4729211E2D3C6424004EB8E6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4704D41E2D3DCCD800D6CF38 /* FreelanceFlow */,
+				472921222D3C6424004EB8E6 /* FreelanceFlow */,
 			);
 			name = FreelanceFlow;
 			packageProductDependencies = (
+				472921462D3DBA47004EB8E6 /* FirebaseAnalytics */,
+				472921482D3DBA47004EB8E6 /* FirebaseAuth */,
+				4729214A2D3DBA47004EB8E6 /* FirebaseCore */,
+				4729214C2D3DBA47004EB8E6 /* FirebaseDatabase */,
+				4729214E2D3DBA47004EB8E6 /* FirebaseFunctions */,
+				472921502D3DBA47004EB8E6 /* FirebaseStorage */,
 			);
 			productName = FreelanceFlow;
-			productReference = 4704D41C2D3DCCD800D6CF38 /* FreelanceFlow.app */;
+			productReference = 472921202D3C6424004EB8E6 /* FreelanceFlow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4704D4142D3DCCD800D6CF38 /* Project object */ = {
+		472921182D3C6424004EB8E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					4704D41B2D3DCCD800D6CF38 = {
+					4729211F2D3C6424004EB8E6 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 4704D4172D3DCCD800D6CF38 /* Build configuration list for PBXProject "FreelanceFlow" */;
+			buildConfigurationList = 4729211B2D3C6424004EB8E6 /* Build configuration list for PBXProject "FreelanceFlow" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 4704D4132D3DCCD800D6CF38;
+			mainGroup = 472921172D3C6424004EB8E6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 4704D41D2D3DCCD800D6CF38 /* Products */;
+			productRefGroup = 472921212D3C6424004EB8E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4704D41B2D3DCCD800D6CF38 /* FreelanceFlow */,
+				4729211F2D3C6424004EB8E6 /* FreelanceFlow */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4704D41A2D3DCCD800D6CF38 /* Resources */ = {
+		4729211E2D3C6424004EB8E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +139,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4704D4182D3DCCD800D6CF38 /* Sources */ = {
+		4729211C2D3C6424004EB8E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +149,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4704D4282D3DCCD900D6CF38 /* Debug */ = {
+		4729212C2D3C6425004EB8E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		4704D4292D3DCCD900D6CF38 /* Release */ = {
+		4729212D2D3C6425004EB8E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,22 +268,27 @@
 			};
 			name = Release;
 		};
-		4704D42B2D3DCCD900D6CF38 /* Debug */ = {
+		4729212F2D3C6425004EB8E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FreelanceFlow/Preview Content\"";
 				DEVELOPMENT_TEAM = 4Z2HM3SS2M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Freelance Flow";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -267,28 +296,38 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.michaltalaga.FreelanceFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		4704D42C2D3DCCD900D6CF38 /* Release */ = {
+		472921302D3C6425004EB8E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FreelanceFlow/Preview Content\"";
 				DEVELOPMENT_TEAM = 4Z2HM3SS2M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Freelance Flow";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,6 +335,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.michaltalaga.FreelanceFlow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = NO;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,25 +349,69 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4704D4172D3DCCD800D6CF38 /* Build configuration list for PBXProject "FreelanceFlow" */ = {
+		4729211B2D3C6424004EB8E6 /* Build configuration list for PBXProject "FreelanceFlow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4704D4282D3DCCD900D6CF38 /* Debug */,
-				4704D4292D3DCCD900D6CF38 /* Release */,
+				4729212C2D3C6425004EB8E6 /* Debug */,
+				4729212D2D3C6425004EB8E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4704D42A2D3DCCD900D6CF38 /* Build configuration list for PBXNativeTarget "FreelanceFlow" */ = {
+		4729212E2D3C6425004EB8E6 /* Build configuration list for PBXNativeTarget "FreelanceFlow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4704D42B2D3DCCD900D6CF38 /* Debug */,
-				4704D42C2D3DCCD900D6CF38 /* Release */,
+				4729212F2D3C6425004EB8E6 /* Debug */,
+				472921302D3C6425004EB8E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		472921462D3DBA47004EB8E6 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		472921482D3DBA47004EB8E6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4729214A2D3DBA47004EB8E6 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		4729214C2D3DBA47004EB8E6 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		4729214E2D3DBA47004EB8E6 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		472921502D3DBA47004EB8E6 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472921452D3DBA47004EB8E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 4704D4142D3DCCD800D6CF38 /* Project object */;
+	rootObject = 472921182D3C6424004EB8E6 /* Project object */;
 }
