@@ -20,13 +20,9 @@ struct AppTabView: View {
         VStack {
             HStack(alignment: .center) {
                 tabButton(text: "Overview", tab: .overview)
-                    .font(.AppleGaramond)
                 tabButton(text: "Projects", tab: .projects)
-                    .font(.AppleGaramond)
                 tabButton(text: "Tasks", tab: .tasks)
-                    .font(.AppleGaramond)
                 tabButton(text: "Messages", tab: .messages)
-                    .font(.AppleGaramond)
             }
             .padding(.horizontal, 10)
             
@@ -41,12 +37,11 @@ struct AppTabView: View {
                 TaskListView(viewModel: TaskListViewModel(dataStore: FirebaseDataStore()))
             case .messages:
                 Text("Messages")
-                    .font(.AppleGaramond)
+                    .font(.custom("Roboto", size: 40))
             }
             
             Spacer()
         }.navigationTitle("Freelance Flow")
-            .font(.AppleGaramond)
             
     }
     
@@ -59,8 +54,9 @@ struct AppTabView: View {
                 Text(text)
                     .foregroundColor(selection == tab ? .black : .gray)
                     .padding(.vertical, 10)
+                    
                 Rectangle()
-                    .fill(selection == tab ? Color.blue : Color.clear)
+                    .fill(selection == tab ? Color.black : Color.clear)
                     .frame(height: 2)
             }
         }

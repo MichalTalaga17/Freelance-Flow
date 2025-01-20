@@ -25,7 +25,6 @@ struct FreelanceFlowApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
-                    .font(.AppleGaramond)
             }
         }
     }

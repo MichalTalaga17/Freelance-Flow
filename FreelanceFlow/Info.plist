@@ -4,12 +4,15 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>AppleGaramond.ttf</string>
-		<string>AppleGaramond-Bold.ttf</string>
-		<string>AppleGaramond-BoldItalic.ttf</string>
-		<string>AppleGaramond-Italic.ttf</string>
-		<string>AppleGaramond-Light.ttf</string>
-		<string>AppleGaramond-LightItalic.ttf</string>
+		<string>Roboto-Black.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-ExtraBold.ttf</string>
+		<string>Roboto-ExtraLight.ttf</string>
+		<string>Roboto-SemiBold.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Thin.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
