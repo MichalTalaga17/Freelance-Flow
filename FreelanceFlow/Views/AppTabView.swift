@@ -1,52 +1,68 @@
+//
+//  AppTabView.swift
+//  FreelanceFlow
+//
+//  Created by Michał Talaga on 20/01/2025.
+//
+
+
 // AppTabView.swift
 
 import SwiftUI
 
 struct AppTabView: View {
-     @State private var selection: Tab = .overview
+    @State private var selection: Tab = .overview
     enum Tab {
         case overview, projects, tasks, messages
     }
-
+    
     var body: some View {
-          VStack {
-              ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 0) {
-                        tabButton(text: "Overview", tab: .overview)
-                      tabButton(text: "Projects", tab: .projects)
-                      tabButton(text: "Tasks", tab: .tasks)
-                    tabButton(text: "Messages", tab: .messages)
-                    }
-                }.frame(height: 50)
-
-              Spacer()
-
-                switch selection {
-                case .overview:
-                   Text("Overview")
-                case .projects:
-                    ProjectListView(viewModel: ProjectListViewModel(dataStore: FirebaseDataStore()))
-               case .tasks:
-                    TaskListView(viewModel: TaskListViewModel(dataStore: FirebaseDataStore()))
-               case .messages:
-                   Text("Messages")
-                 }
-
-              Spacer()
-          }.navigationTitle("Freelance Flow")
+        VStack {
+            HStack(alignment: .center) {
+                tabButton(text: "Overview", tab: .overview)
+                    .font(.AppleGaramond)
+                tabButton(text: "Projects", tab: .projects)
+                    .font(.AppleGaramond)
+                tabButton(text: "Tasks", tab: .tasks)
+                    .font(.AppleGaramond)
+                tabButton(text: "Messages", tab: .messages)
+                    .font(.AppleGaramond)
+            }
+            .padding(.horizontal, 10)
+            
+            Spacer()
+            
+            switch selection {
+            case .overview:
+                Text("Overview")
+            case .projects:
+                ProjectListView(viewModel: ProjectListViewModel(dataStore: FirebaseDataStore()))
+            case .tasks:
+                TaskListView(viewModel: TaskListViewModel(dataStore: FirebaseDataStore()))
+            case .messages:
+                Text("Messages")
+                    .font(.AppleGaramond)
+            }
+            
+            Spacer()
+        }.navigationTitle("Freelance Flow")
+            .font(.AppleGaramond)
+            
     }
     
     @ViewBuilder
     func tabButton(text: String, tab: Tab) -> some View {
-         Button(action: {
-             selection = tab
-         }) {
-            Text(text)
-                 .foregroundColor(selection == tab ? .white : .gray)
-                .padding(10)
-                 .background(selection == tab ? Color.blue : Color.clear)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-
-           }
+        Button(action: {
+            selection = tab
+        }) {
+            VStack(spacing: 0) {
+                Text(text)
+                    .foregroundColor(selection == tab ? .black : .gray)
+                    .padding(.vertical, 10)
+                Rectangle()
+                    .fill(selection == tab ? Color.blue : Color.clear)
+                    .frame(height: 2)
+            }
+        }
     }
 }

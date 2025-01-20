@@ -19,9 +19,27 @@
 		472921202D3C6424004EB8E6 /* FreelanceFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreelanceFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4704D4982D3E69FB00D6CF38 /* Exceptions for "FreelanceFlow" folder in "FreelanceFlow" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 4729211F2D3C6424004EB8E6 /* FreelanceFlow */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		4704D49E2D3E6C9500D6CF38 /* Fonts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		472921222D3C6424004EB8E6 /* FreelanceFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4704D4982D3E69FB00D6CF38 /* Exceptions for "FreelanceFlow" folder in "FreelanceFlow" target */,
+			);
 			path = FreelanceFlow;
 			sourceTree = "<group>";
 		};
@@ -49,6 +67,7 @@
 			children = (
 				472921222D3C6424004EB8E6 /* FreelanceFlow */,
 				472921212D3C6424004EB8E6 /* Products */,
+				4704D49E2D3E6C9500D6CF38 /* Fonts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +95,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				4704D49E2D3E6C9500D6CF38 /* Fonts */,
 				472921222D3C6424004EB8E6 /* FreelanceFlow */,
 			);
 			name = FreelanceFlow;
@@ -280,6 +300,7 @@
 				DEVELOPMENT_TEAM = 4Z2HM3SS2M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FreelanceFlow/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Freelance Flow";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -319,6 +340,7 @@
 				DEVELOPMENT_TEAM = 4Z2HM3SS2M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FreelanceFlow/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Freelance Flow";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
