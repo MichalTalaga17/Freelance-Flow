@@ -1,0 +1,35 @@
+//
+//  TaskListView.swift
+//  FreelanceFlow
+//
+//  Created by Michał Talaga on 20/01/2025.
+//
+
+
+import SwiftUI
+
+struct TaskListView: View {
+    @StateObject var viewModel: TaskListViewModel
+
+    var body: some View {
+        VStack {
+             if viewModel.isLoading {
+                ProgressView()
+            } else if !viewModel.error.isEmpty {
+                Text("Error: \(viewModel.error)")
+            } else {
+                 List {
+                    ForEach(viewModel.tasks, id: \.id) { task in
+                        NavigationLink(destination: TaskDetailView(taskId: task.id)){
+                            Text(task.name)
+                        }
+                    }
+                }
+             }
+        }
+    }
+}
+
+#Preview {
+    TaskListView(viewModel: MockTaskListViewModel(dataStore: FirebaseDataStore()))
+}
