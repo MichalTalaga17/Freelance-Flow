@@ -23,5 +23,5 @@ enum TaskStatus: String {
     case todo, inProgress, completed
 }
 enum Tab {
-    case overview, projects, tasks, messages
+    case overview, projects, tasks, clients //, messages
 }

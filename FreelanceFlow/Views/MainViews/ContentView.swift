@@ -22,13 +22,19 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(10)
-            HStack (alignment: .center){
+            HStack(alignment: .center) {
                 tabButton(text: "Overview", tab: .overview)
                 tabButton(text: "Projects", tab: .projects)
                 tabButton(text: "Tasks", tab: .tasks)
                 tabButton(text: "Clients", tab: .clients)
             }
-            .border(Color(red: 1.0, green: 0.0, blue: 0.0, opacity: 1.0))
+            .overlay(
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.primary.opacity(0.1))
+                    .padding(.top, 20),
+                alignment: .bottom
+            )
             VStack {
                 switch selection {
                 case .overview:

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Clients: View {
+struct ClientsView: View {
     @StateObject var viewModel: ClientListViewModel
 
     var body: some View {

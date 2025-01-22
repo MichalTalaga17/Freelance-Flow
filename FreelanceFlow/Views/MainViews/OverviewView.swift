@@ -8,13 +8,73 @@
 import SwiftUI
 
 struct OverviewView: View {
+    
     var body: some View {
-        HStack{
-            Spacer()
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Spacer()
+        GeometryReader { geometry in
+            ScrollView(){
+                VStack(spacing: 0) {
+                    HStack {
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                    }
+                    .border(Color.gray)
+                    
+                    HStack {
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                        .border(Color.gray)
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                        .border(Color.gray)
+                    }
+                    
+                    HStack {
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                    }
+                    HStack {
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                    }
+                    HStack {
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                    }
+                    HStack {
+                        VStack{
+                            Text("Hours spend on projects")
+                                .font(.title)
+                        }.frame(
+                            maxWidth: .infinity
+                        )
+                    }
+                }
+            }
         }
-        Spacer()
     }
 }
 
