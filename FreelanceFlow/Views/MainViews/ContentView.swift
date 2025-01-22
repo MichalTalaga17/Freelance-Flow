@@ -10,25 +10,25 @@
 
 import SwiftUI
 
-struct AppTabView: View {
+struct ContentView: View {
     @State private var selection: Tab = .overview
     
     var body: some View {
         
-        VStack {
+        VStack (spacing: 0){
             HStack {
                 Text("Freelance Flow")
                     .font(.title.bold())
-                
                 Spacer()
             }
-            .padding(.horizontal, 10)
+            .padding(10)
             HStack (alignment: .center){
                 tabButton(text: "Overview", tab: .overview)
                 tabButton(text: "Projects", tab: .projects)
                 tabButton(text: "Tasks", tab: .tasks)
-                //tabButton(text: "Messages", tab: .messages)
+                tabButton(text: "Clients", tab: .clients)
             }
+            .border(Color(red: 1.0, green: 0.0, blue: 0.0, opacity: 1.0))
             VStack {
                 switch selection {
                 case .overview:
@@ -37,11 +37,13 @@ struct AppTabView: View {
                     ProjectsView(viewModel: ProjectListViewModel(dataStore: FirebaseDataStore()))
                 case .tasks:
                     TasksView(viewModel: TaskListViewModel(dataStore: FirebaseDataStore()))
+                case .clients:
+                    ClientsView(viewModel: ClientListViewModel(dataStore: FirebaseDataStore()))
                 }
                 Spacer()
             }
         }
-   
+        
     }
     @ViewBuilder
     func tabButton(text: String, tab: Tab) -> some View {
@@ -65,34 +67,8 @@ struct AppTabView: View {
 
 #Preview {
     NavigationView {
-        AppTabView()
+        ContentView()
     }
 }
 
-//struct AppTabView: View {
-//    var body: some View {
-//        TabView {
-//            OverviewView()
-//                .tabItem {
-//                    Label("Overview", systemImage: "house")
-//                }
-//            
-//            ProjectListView(viewModel: ProjectListViewModel(dataStore: FirebaseDataStore()))
-//                .tabItem {
-//                    Label("Projects", systemImage: "folder")
-//                }
-//            
-//            TaskListView(viewModel: TaskListViewModel(dataStore: FirebaseDataStore()))
-//                .tabItem {
-//                    Label("Tasks", systemImage: "checkmark.circle")
-//                }
-//            
-//            MessagesView() // Zamień na rzeczywisty widok wiadomości
-//                .tabItem {
-//                    Label("Messages", systemImage: "message")
-//                }
-//        }
-//        .navigationTitle("Freelance Flow") // Ustawia tytuł dla widoków w TabView
-//        .toolbarTitleDisplayMode(.large) // Wymusza duży tytuł
-//    }
-//}
+

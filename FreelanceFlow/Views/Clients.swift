@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ClientListView: View {
+struct Clients: View {
     @StateObject var viewModel: ClientListViewModel
 
     var body: some View {
@@ -32,5 +32,5 @@ struct ClientListView: View {
 
 
 #Preview {
-    ClientListView(viewModel: MockClientListViewModel(dataStore: FirebaseDataStore()))
+    ClientsView(viewModel: MockClientListViewModel(dataStore: FirebaseDataStore()))
 }

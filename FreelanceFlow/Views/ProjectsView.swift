@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProjectListView: View {
+struct ProjectsView: View {
     @StateObject var viewModel: ProjectListViewModel
     
     var body: some View {
@@ -35,5 +35,5 @@ struct ProjectListView: View {
 }
 
 #Preview {
-    ProjectListView(viewModel: MockProjectListViewModel(dataStore: FirebaseDataStore()))
+    ProjectsView(viewModel: MockProjectListViewModel(dataStore: FirebaseDataStore()))
 }

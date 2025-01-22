@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct TaskListView: View {
+struct TasksView: View {
     @StateObject var viewModel: TaskListViewModel
 
     var body: some View {
@@ -32,5 +32,5 @@ struct TaskListView: View {
 }
 
 #Preview {
-    TaskListView(viewModel: MockTaskListViewModel(dataStore: FirebaseDataStore()))
+    TasksView(viewModel: MockTaskListViewModel(dataStore: FirebaseDataStore()))
 }
