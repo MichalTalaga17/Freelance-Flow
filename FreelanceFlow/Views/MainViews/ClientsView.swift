@@ -5,7 +5,6 @@
 //  Created by Michał Talaga on 20/01/2025.
 //
 
-
 import SwiftUI
 
 struct ClientsView: View {
@@ -20,9 +19,11 @@ struct ClientsView: View {
             } else {
                 List {
                     ForEach(viewModel.clients, id: \.id) { client in
-                         NavigationLink(destination: ClientDetailView(clientId: client.id)){
-                             Text(client.name)
-                         }
+                        NavigationLink(
+                            destination: ClientDetailView(clientId: client.id)
+                        ) {
+                            Text(client.name)
+                        }
                     }
                 }
             }
@@ -30,7 +31,7 @@ struct ClientsView: View {
     }
 }
 
-
 #Preview {
-    ClientsView(viewModel: MockClientListViewModel(dataStore: FirebaseDataStore()))
+    ClientsView(
+        viewModel: MockClientListViewModel(dataStore: FirebaseDataStore()))
 }

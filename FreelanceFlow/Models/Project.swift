@@ -6,7 +6,8 @@
 //
 
 import Foundation
-struct Project {
+
+struct Project: Identifiable {
     let id: String
     var name: String
     var description: String?

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ClientDetailView: View {
     let clientId: String
-     @StateObject var viewModel : ClientDetailViewModel
+    @StateObject var viewModel : ClientDetailViewModel
 
     init(clientId: String) {
         self.clientId = clientId
@@ -18,40 +18,65 @@ struct ClientDetailView: View {
     }
 
     var body: some View {
-       ScrollView {
-             if viewModel.isLoading {
-                 ProgressView()
-             } else if !viewModel.error.isEmpty {
-                 Text("Error: \(viewModel.error)")
-             }else {
-              if let client = viewModel.client {
-                  VStack(alignment: .leading, spacing: 10) {
-                       Text("Client Details").font(.headline)
-                          VStack(alignment: .leading) {
-                             Text("  Client ID: \(client.id)")
-                               Text("  Name: \(client.name)")
-                              if let email = client.email {
-                                  Text("  Email: \(email)")
-                              }
-                             if let phoneNumber = client.phoneNumber {
-                                 Text("  Phone: \(phoneNumber)")
-                              }
-                             if let address = client.address {
-                                  Text("  Address: \(address)")
-                               }
-                             if let notes = client.notes {
-                                 Text("  Notes: \(notes)")
-                               }
-                             if let tags = client.tags {
-                               Text("  Tags: \(tags)")
-                           }
-
+      NavigationStack {
+         ScrollView {
+            VStack(spacing: 15) {
+              if viewModel.isLoading {
+                  ProgressView()
+              } else if !viewModel.error.isEmpty {
+                Text("Error: \(viewModel.error)")
+                   .foregroundColor(.red)
+              } else if let client = viewModel.client {
+                 VStack(alignment: .leading, spacing: 10) {
+                     Text("Client Details")
+                        .font(.title2)
+                        .bold()
+                       
+                         Text("Client ID: \(client.id)")
+                           
+                         Text("Name: \(client.name)")
+                         
+                         if let email = client.email {
+                            Text("Email: \(email)")
+                         }
+                         
+                        if let phoneNumber = client.phoneNumber {
+                           Text("Phone: \(phoneNumber)")
                         }
-
-
-                      }
-                  }
-            }
+                        
+                        if let address = client.address {
+                            Text("Address: \(address)")
+                         }
+                    
+                    if let notes = client.notes, !notes.isEmpty {
+                       Text("Notes:")
+                         .font(.headline)
+                       Text(notes)
+                        .padding(.vertical, 5)
+                         .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    
+                   if let tags = client.tags, !tags.isEmpty {
+                       Text("Tags:")
+                           .font(.headline)
+                       ForEach(tags, id: \.self) { tag in
+                           Text("- \(tag)")
+                       }
+                   }
+                }
+                .padding()
+                .background(Color.gray.opacity(0.1))
+               .cornerRadius(10)
+               
+             }
+                Spacer()
+           }
+          .padding()
+         }
        }
-    }
+     }
+}
+
+#Preview {
+    ClientDetailView(clientId: "client1_id")
 }
