@@ -36,6 +36,7 @@ struct ContentView: View {
                 }
         
         }
+        .navigationTitle("FreelanceFlow")
 
 //        VStack(spacing: 0) {
 //            HStack {

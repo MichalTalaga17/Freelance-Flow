@@ -25,7 +25,7 @@ struct ProjectDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 15){
+                VStack(spacing: 0){
                     if viewModel.isLoading {
                         ProgressView()
                     } else if !viewModel.error.isEmpty {
@@ -106,7 +106,7 @@ struct ProjectDetailView: View {
                             }
                         }
                         .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .background(Color.primary.opacity(0.1))
                         .cornerRadius(10)
                         
                         Spacer()

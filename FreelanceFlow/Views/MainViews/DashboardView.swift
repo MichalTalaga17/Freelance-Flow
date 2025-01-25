@@ -20,7 +20,7 @@ struct DashboardView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
                     if viewModel.isLoading {
-                        ProgressView()
+                        LoadingView()
                     } else if let error = viewModel.error {
                         Text("Error: \(error)")
                     } else {
@@ -58,7 +58,7 @@ struct DashboardTile: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color.gray.opacity(0.1))
+        .background(Color.primary.opacity(0.1))
         .cornerRadius(8)
     }
 }
