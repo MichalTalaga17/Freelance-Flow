@@ -11,32 +11,36 @@ struct ContentView: View {
     @State private var selection: Tab = .projects
 
     var body: some View {
-        TabView(selection: $selection) {
-            DashboardView()
-                .tabItem {
-                    Label("Dashboard", systemImage: "house.fill")
-                }
-            ProjectsView(
-                viewModel: ProjectListViewModel(
-                    dataStore: FirebaseDataStore()))
-                .tabItem {
-                    Label("Projects", systemImage: "macwindow.on.rectangle")
-                }
-            TasksView(
-                viewModel: TaskListViewModel(
-                    dataStore: FirebaseDataStore()))
-                .tabItem {
-                    Label("Tasks", systemImage: "checkmark.circle")
-                }
-            ClientsView(
-                viewModel: ClientListViewModel(
-                    dataStore: FirebaseDataStore()))
-                .tabItem {
-                    Label("Clients", systemImage: "person.2.fill")
-                }
-        
+        VStack{
+            Text("FreelanceFlow")
+                .font(.title2.bold())
+            TabView(selection: $selection) {
+                DashboardView()
+                    .tabItem {
+                        Label("Dashboard", systemImage: "house.fill")
+                    }
+                ProjectsView(
+                    viewModel: ProjectListViewModel(
+                        dataStore: FirebaseDataStore()))
+                    .tabItem {
+                        Label("Projects", systemImage: "macwindow.on.rectangle")
+                    }
+                TasksView(
+                    viewModel: TaskListViewModel(
+                        dataStore: FirebaseDataStore()))
+                    .tabItem {
+                        Label("Tasks", systemImage: "checkmark.circle")
+                    }
+                ClientsView(
+                    viewModel: ClientListViewModel(
+                        dataStore: FirebaseDataStore()))
+                    .tabItem {
+                        Label("Clients", systemImage: "person.2.fill")
+                    }
+            
+            }
         }
-        .navigationTitle("FreelanceFlow")
+        
 
 //        VStack(spacing: 0) {
 //            HStack {

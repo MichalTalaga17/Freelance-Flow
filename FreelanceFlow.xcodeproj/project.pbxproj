@@ -30,11 +30,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		4704D49E2D3E6C9500D6CF38 /* Fonts */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		472921222D3C6424004EB8E6 /* FreelanceFlow */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -67,7 +62,6 @@
 			children = (
 				472921222D3C6424004EB8E6 /* FreelanceFlow */,
 				472921212D3C6424004EB8E6 /* Products */,
-				4704D49E2D3E6C9500D6CF38 /* Fonts */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +89,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				4704D49E2D3E6C9500D6CF38 /* Fonts */,
 				472921222D3C6424004EB8E6 /* FreelanceFlow */,
 			);
 			name = FreelanceFlow;

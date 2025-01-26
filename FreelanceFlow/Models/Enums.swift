@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum ProjectStatus: String {
+enum ProjectStatus: String, CaseIterable{
     case pending, inProgress, onHold, completed, cancelled
 }
 enum MilestoneStatus: String {
