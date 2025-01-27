@@ -10,7 +10,7 @@ import Foundation
 
 class TaskListViewModel : ObservableObject {
     @Published var tasks: [Task] = []
-     @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = false
     @Published var error: String = ""
 
     private let dataStore : DataStore
@@ -21,14 +21,23 @@ class TaskListViewModel : ObservableObject {
     }
     
     func fetchTasks(){
-          isLoading = true
-          dataStore.fetchTasks { [weak self] tasks in
-             self?.isLoading = false
-                if let tasks = tasks {
-                      self?.tasks = tasks
-                  } else {
-                    self?.error = "Failed to fetch tasks"
-                  }
+        isLoading = true
+        dataStore.fetchTasks { [weak self] tasks in
+            self?.isLoading = false
+            if let tasks = tasks {
+                self?.tasks = tasks
+            } else {
+                self?.error = "Failed to fetch tasks"
             }
         }
+    }
+    func addTask(_ task: Task) {
+        dataStore.saveTask(task: task){ [weak self] success in
+            if success {
+                self?.tasks.append(task)
+            } else {
+                self?.error = "Failed to save the task"
+            }
+        }
+    }
 }

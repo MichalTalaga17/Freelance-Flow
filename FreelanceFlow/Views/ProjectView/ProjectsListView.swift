@@ -17,7 +17,7 @@ struct ProjectsListView: View {
             } else if !viewModel.error.isEmpty {
                 Text("Error: \(viewModel.error)")
             } else {
-                VStack{
+                VStack(spacing: 0){
                     NavigationView{
                         List {
                             ForEach(viewModel.projects, id: \.id) { project in
@@ -59,6 +59,7 @@ struct ProjectsListView: View {
                                 .padding(.vertical, 5)
                             }
                         }
+                        .padding(.vertical, -20)
                         .scrollContentBackground(.hidden)
                     }
                 
@@ -80,6 +81,6 @@ private let dateFormatter: DateFormatter = {
 
 #Preview {
     ProjectsView(
-        viewModel: MockProjectListViewModel(dataStore: FirebaseDataStore())
+        viewModel: ProjectListViewModel(dataStore: FirebaseDataStore())
     )
 }

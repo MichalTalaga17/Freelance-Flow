@@ -13,33 +13,38 @@ struct ProjectsView: View {
     @State private var isShowingAddProjectView = false
     
     var body: some View {
-        VStack {
+        ZStack {
             ProjectsListView(viewModel: viewModel)
             
-            HStack {
+            VStack{
                 Spacer()
-                Button(action: {
-                    isShowingAddProjectView.toggle()
-                }) {
-                    Text("Add New Project")
-                        .padding()
-                        .background(Color.primary)
-                        .foregroundColor(colorScheme == .dark ? .black : .white)
-                        .cornerRadius(8)
-                }
-                .padding()
-                .sheet(isPresented: $isShowingAddProjectView) {
-                    AddProjectView(onSave: { newProject in
-                        viewModel.addProject(newProject)
-                    })
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        isShowingAddProjectView.toggle()
+                    }) {
+                        Text("Add New Project")
+                            .padding()
+                            .background(Color.primary.opacity(0.8))
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
+                            .cornerRadius(8)
+                    }
+                    .padding()
+                    .sheet(isPresented: $isShowingAddProjectView) {
+                        AddProjectView(onSave: { newProject in
+                            viewModel.addProject(newProject)
+                        })
+                    }
                 }
             }
         }
+        
+        
     }
 }
 
 #Preview {
     ProjectsView(
-        viewModel: MockProjectListViewModel(dataStore: FirebaseDataStore())
+        viewModel: ProjectListViewModel(dataStore: FirebaseDataStore())
     )
 }

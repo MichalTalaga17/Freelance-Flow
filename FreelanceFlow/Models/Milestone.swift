@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Milestone {
+struct Milestone : Hashable {
     let id: String
     var name: String
     var description: String?

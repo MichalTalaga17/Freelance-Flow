@@ -10,8 +10,8 @@ import Foundation
 
 class ClientListViewModel : ObservableObject {
     @Published var clients: [Client] = []
-      @Published var isLoading: Bool = false
-     @Published var error: String = ""
+    @Published var isLoading: Bool = false
+    @Published var error: String = ""
     private let dataStore : DataStore
 
     init(dataStore: DataStore) {
@@ -20,14 +20,23 @@ class ClientListViewModel : ObservableObject {
     }
     
     func fetchClients(){
-          isLoading = true
-           dataStore.fetchClients { [weak self] clients in
-               self?.isLoading = false
-                if let clients = clients {
-                    self?.clients = clients
-                } else {
-                    self?.error = "Failed to fetch clients"
-                }
+        isLoading = true
+        dataStore.fetchClients { [weak self] clients in
+            self?.isLoading = false
+            if let clients = clients {
+                self?.clients = clients
+            } else {
+                self?.error = "Failed to fetch clients"
             }
-      }
+        }
+    }
+    func addClient(_ client: Client) {
+        dataStore.saveClient(client: client) { [weak self] success in
+            if success {
+                self?.clients.append(client)
+            } else {
+                self?.error = "Failed to save the client"
+            }
+        }
+    }
 }

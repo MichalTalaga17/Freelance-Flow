@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Project: Identifiable {
+struct Project: Identifiable, Hashable {
     let id: String
     var name: String
     var description: String?
@@ -44,15 +44,14 @@ struct Project: Identifiable {
         if let description = description { dict["description"] = description }
         if let deadline = deadline { dict["deadline"] = deadline.timeIntervalSince1970 }
         if let clientId = clientId { dict["clientId"] = clientId }
-        if let goals = goals {dict["goals"] = goals }
+        if let goals = goals { dict["goals"] = goals }
         if let milestones = milestones {
-            dict["milestones"] = milestones.map {$0.toDictionary()}
+            dict["milestones"] = milestones.map { $0.toDictionary() }
         }
-        
         if let budget = budget { dict["budget"] = budget }
         if let actualCost = actualCost { dict["actualCost"] = actualCost }
-        if let tags = tags { dict["tags"] = tags}
-        if let progress = progress { dict["progress"] = progress}
+        if let tags = tags { dict["tags"] = tags }
+        if let progress = progress { dict["progress"] = progress }
         return dict
     }
 }

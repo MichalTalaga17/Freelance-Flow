@@ -11,15 +11,15 @@ import Foundation
 enum ProjectStatus: String, CaseIterable{
     case pending, inProgress, onHold, completed, cancelled
 }
-enum MilestoneStatus: String {
+enum MilestoneStatus: String, CaseIterable {
     case pending, inProgress, completed
 }
 
-enum TaskPriority: String {
+enum TaskPriority: String, CaseIterable {
     case low, normal, high
 }
 
-enum TaskStatus: String {
+enum TaskStatus: String, CaseIterable {
     case todo, inProgress, completed
 }
 enum Tab {
