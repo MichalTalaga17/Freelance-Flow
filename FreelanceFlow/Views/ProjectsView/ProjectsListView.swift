@@ -18,7 +18,6 @@ struct ProjectsListView: View {
                 Text("Error: \(viewModel.error)")
             } else {
                 VStack(spacing: 0){
-                    NavigationView{
                         List {
                             ForEach(viewModel.projects, id: \.id) { project in
                                 NavigationLink(
@@ -59,9 +58,10 @@ struct ProjectsListView: View {
                                 .padding(.vertical, 5)
                             }
                         }
-                        .padding(.vertical, -20)
                         .scrollContentBackground(.hidden)
-                    }
+                        .refreshable {
+                            viewModel.fetchProjects()
+                        }
                 
                 
             }

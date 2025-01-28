@@ -25,7 +25,7 @@ struct TasksView: View {
                     }) {
                         Text("Add New Task")
                             .padding()
-                            .background(Color.primary.opacity(0.8))
+                            .background(Color.primary)
                             .foregroundColor(colorScheme == .dark ? .black : .white)
                             .cornerRadius(8)
                     }

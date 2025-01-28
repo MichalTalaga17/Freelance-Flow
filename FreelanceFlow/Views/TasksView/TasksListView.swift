@@ -25,6 +25,9 @@ struct TasksListView: View {
                         }
                     }
                 }
+                 .refreshable {
+                    viewModel.fetchTasks()
+                }
              }
         }
         .scrollContentBackground(.hidden)

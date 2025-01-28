@@ -11,35 +11,36 @@ struct ClientsView: View {
     @StateObject var viewModel: ClientListViewModel
     @Environment(\.colorScheme) var colorScheme
     @State private var isShowingAddClientView = false
-    
 
-    var body: some View {
-        ZStack{
-            ClientsListView(viewModel: viewModel)
-            VStack{
-                Spacer()
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        isShowingAddClientView.toggle()
-                    }) {
-                        Text("Add New Client")
+        var body: some View {
+            NavigationView { // Add Navigation view
+                ZStack {
+                    ClientsListView(viewModel: viewModel)
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                isShowingAddClientView.toggle()
+                            }) {
+                                Text("Add New Client")
+                                    .padding()
+                                    .background(Color.primary)
+                                    .foregroundColor(colorScheme == .dark ? .black : .white)
+                                    .cornerRadius(8)
+                            }
                             .padding()
-                            .background(Color.primary.opacity(0.8))
-                            .foregroundColor(colorScheme == .dark ? .black : .white)
-                            .cornerRadius(8)
-                    }
-                    .padding()
-                    .sheet(isPresented: $isShowingAddClientView) {
-                        AddClientView(onSave: { newClient in
-                            viewModel.addClient(newClient)
-                        })
+                            .sheet(isPresented: $isShowingAddClientView) {
+                                AddClientView(onSave: { newClient in
+                                    viewModel.addClient(newClient)
+                                })
+                            }
+                        }
                     }
                 }
             }
         }
     }
-}
 
 #Preview {
     ClientsView(

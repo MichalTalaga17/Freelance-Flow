@@ -18,21 +18,23 @@ struct DashboardView: View {
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
                     if dashboardViewModel.isLoading {
                         LoadingView()
+                    .frame(minHeight: geometry.size.height)
                     } else if let error = dashboardViewModel.error {
                         Text("Error: \(error)")
                     } else {
+                        
+                            LazyVGrid(columns: columns, spacing: 10) {
                         DashboardTile(title: "Total Projects", value: dashboardViewModel.totalProjects)
                         DashboardTile(title: "Active Projects", value: dashboardViewModel.activeProjects)
                         DashboardTile(title: "Completed Projects", value: dashboardViewModel.completedProjects)
                         DashboardTile(title: "Total Tasks", value: dashboardViewModel.totalTasks)
                         DashboardTile(title: "Open Tasks", value: dashboardViewModel.openTasks)
-                        DashboardTile(title: "Completed Tasks", value: dashboardViewModel.completedTasks)
+                        DashboardTile(title: "Completed Tasks", value: dashboardViewModel.completedTasks)}
+                            .padding()
                     }
-                }
-                .padding()
+                
             }
         }
         .onAppear {

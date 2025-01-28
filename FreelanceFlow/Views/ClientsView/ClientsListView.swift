@@ -41,6 +41,9 @@ struct ClientsListView: View {
                         }
                     }
                 }
+                .refreshable {
+                    viewModel.fetchClients()
+                }
             }
         }
     }
