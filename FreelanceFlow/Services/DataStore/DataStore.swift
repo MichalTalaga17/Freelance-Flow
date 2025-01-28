@@ -22,8 +22,8 @@ protocol DataStore {
     func deleteClient(id: String, completion: @escaping (Bool) -> Void)
 
     // MARK: - Task Operations
-    func fetchTasks(completion: @escaping ([Task]?) -> Void)
-    func fetchTask(id: String, completion: @escaping (Task?) -> Void)
-    func saveTask(task: Task, completion: @escaping (Bool) -> Void)
+    func fetchTasks(completion: @escaping ([ProjectTask]?) -> Void)
+    func fetchTask(id: String, completion: @escaping (ProjectTask?) -> Void)
+    func saveTask(task: ProjectTask, completion: @escaping (Bool) -> Void)
     func deleteTask(id: String, completion: @escaping (Bool) -> Void)
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Task {
+struct ProjectTask {
     let id: String
     var projectId: String
     var name: String

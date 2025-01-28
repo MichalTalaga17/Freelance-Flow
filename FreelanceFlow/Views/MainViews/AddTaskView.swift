@@ -20,7 +20,7 @@ struct AddTaskView: View {
     @State private var isLoadingProjects = true
 
     @Environment(\.presentationMode) var presentationMode
-    var onSave: (Task) -> Void
+    var onSave: (ProjectTask) -> Void
 
     private let dataStore = FirebaseDataStore()
 
@@ -98,7 +98,7 @@ struct AddTaskView: View {
     private func saveTask() {
         let estimatedTimeValue = TimeInterval(estimatedTime) ?? 0
 
-        let task = Task(
+        let task = ProjectTask(
             id: UUID().uuidString,
             projectId: selectedProject?.id ?? "",
             name: name,

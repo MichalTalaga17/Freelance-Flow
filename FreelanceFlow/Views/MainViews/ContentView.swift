@@ -15,7 +15,8 @@ struct ContentView: View {
             Text("FreelanceFlow")
                 .font(.title2.bold())
             TabView(selection: $selection) {
-                DashboardView()
+                DashboardView(
+                    dashboardViewModel: DashboardViewModel(dataStore: FirebaseDataStore()))
                     .tabItem {
                         Label("Dashboard", systemImage: "house.fill")
                     }
@@ -25,9 +26,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Projects", systemImage: "macwindow.on.rectangle")
                     }
-                TasksView(
-                    viewModel: TaskListViewModel(
-                        dataStore: FirebaseDataStore()))
+                TasksView(viewModel: TaskListViewModel(dataStore: FirebaseDataStore()))
                     .tabItem {
                         Label("Tasks", systemImage: "checkmark.circle")
                     }
@@ -40,6 +39,7 @@ struct ContentView: View {
             
             }
         }
+    
         
 
 //        VStack(spacing: 0) {

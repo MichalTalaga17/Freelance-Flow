@@ -9,7 +9,7 @@
 import Foundation
 
 class TaskListViewModel : ObservableObject {
-    @Published var tasks: [Task] = []
+    @Published var tasks: [ProjectTask] = []
     @Published var isLoading: Bool = false
     @Published var error: String = ""
 
@@ -31,7 +31,7 @@ class TaskListViewModel : ObservableObject {
             }
         }
     }
-    func addTask(_ task: Task) {
+    func addTask(_ task: ProjectTask) {
         dataStore.saveTask(task: task){ [weak self] success in
             if success {
                 self?.tasks.append(task)

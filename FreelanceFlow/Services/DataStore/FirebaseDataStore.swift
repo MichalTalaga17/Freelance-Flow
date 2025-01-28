@@ -140,7 +140,7 @@ class FirebaseDataStore: DataStore {
 
     // MARK: - Task Operations
 
-    func fetchTasks(completion: @escaping ([Task]?) -> Void) {
+    func fetchTasks(completion: @escaping ([ProjectTask]?) -> Void) {
         print("FirebaseDataStore: fetchTasks() called")
         database.child("tasks").observeSingleEvent(of: .value) { snapshot in
              print("FirebaseDataStore: fetchTasks - observeSingleEvent triggered, snapshot \(snapshot.childrenCount)")
@@ -149,7 +149,7 @@ class FirebaseDataStore: DataStore {
                 completion(nil)
                 return
             }
-            let tasks = value.compactMap { (key, value) -> Task? in
+            let tasks = value.compactMap { (key, value) -> ProjectTask? in
                  print("FirebaseDataStore: fetchTasks - mapping a task")
                 guard let value = value as? [String: Any] else {
                   print("FirebaseDataStore: fetchTasks - guard failed while mapping task")
@@ -162,9 +162,9 @@ class FirebaseDataStore: DataStore {
         }
     }
 
-    func fetchTask(id: String, completion: @escaping (Task?) -> Void) {
+    func fetchTask(id: String, completion: @escaping (ProjectTask?) -> Void) {
          print("FirebaseDataStore: fetchTask() called with id \(id)")
-        database.child("tasks").child(id).observeSingleEvent(of: .value) { snapshot in
+        database.child("tasks").child(id).observeSingleEvent(of: .value) { snapshot  in
              guard let value = snapshot.value as? [String: Any] else {
                 print("FirebaseDataStore: fetchTask() - guard failed, value is not [String:Any] for id \(id)")
                 completion(nil)
@@ -176,7 +176,7 @@ class FirebaseDataStore: DataStore {
        }
    }
 
-    func saveTask(task: Task, completion: @escaping (Bool) -> Void) {
+    func saveTask(task: ProjectTask, completion: @escaping (Bool) -> Void) {
         print("FirebaseDataStore: saveTask() called with id \(task.id)")
         let taskData = task.toDictionary()
         database.child("tasks").child(task.id).setValue(taskData) { error, _ in
@@ -264,7 +264,7 @@ class FirebaseDataStore: DataStore {
                            tags: value["tags"] as? [String])
     }
 
-    private func createTaskFromFirebaseData(key:String, value: [String: Any]) -> Task? {
+    private func createTaskFromFirebaseData(key:String, value: [String: Any]) -> ProjectTask? {
          guard let projectId = value["projectId"] as? String,
                 let name = value["name"] as? String,
                let statusString = value["status"] as? String,
@@ -283,7 +283,7 @@ class FirebaseDataStore: DataStore {
         if let startTimeTimestamp = value["startTime"] as? TimeInterval {
            startTime =  Date(timeIntervalSince1970: startTimeTimestamp)
         }
-          return Task(id: key,
+          return ProjectTask(id: key,
                        projectId: projectId,
                        name: name,
                        description: value["description"] as? String,

@@ -12,6 +12,7 @@ struct TasksView: View {
     @StateObject var viewModel: TaskListViewModel
     @Environment(\.colorScheme) var colorScheme
     @State private var isShowingAddTaskView: Bool = false
+    
     var body: some View {
         VStack{
             TasksListView(viewModel: viewModel)

@@ -33,7 +33,9 @@ class DashboardViewModel: ObservableObject {
        defer { isLoading = false }
 
          do {
+             print("fetching projects async")
             let projects = try await fetchProjectsAsync()
+             print("fetching tasks async")
             let tasks = try await fetchTasksAsync()
              
              totalProjects = String(projects.count)
@@ -60,7 +62,7 @@ class DashboardViewModel: ObservableObject {
         }
     }
 
-    private func fetchTasksAsync() async throws -> [Task] {
+    private func fetchTasksAsync() async throws -> [ProjectTask] {
         return try await withCheckedThrowingContinuation { continuation in
             dataStore.fetchTasks { tasks in
                 if let tasks = tasks {

@@ -9,7 +9,7 @@
 import Foundation
 
 class TaskDetailViewModel : ObservableObject {
-     @Published var task: Task?
+     @Published var task: ProjectTask?
      @Published var isLoading: Bool = false
     @Published var error: String = ""
 

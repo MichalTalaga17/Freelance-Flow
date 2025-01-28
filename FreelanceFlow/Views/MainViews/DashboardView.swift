@@ -8,35 +8,37 @@
 import SwiftUI
 
 struct DashboardView: View {
-    @StateObject private var viewModel = DashboardViewModel(dataStore: FirebaseDataStore())
+    @StateObject var dashboardViewModel: DashboardViewModel
 
     let columns = [
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
-
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 10) {
-                    if viewModel.isLoading {
+                    if dashboardViewModel.isLoading {
                         LoadingView()
-                    } else if let error = viewModel.error {
+                    } else if let error = dashboardViewModel.error {
                         Text("Error: \(error)")
                     } else {
-                         DashboardTile(title: "Total Projects", value: viewModel.totalProjects)
-                        DashboardTile(title: "Active Projects", value: viewModel.activeProjects)
-                        DashboardTile(title: "Completed Projects", value: viewModel.completedProjects)
-                        DashboardTile(title: "Total Tasks", value: viewModel.totalTasks)
-                        DashboardTile(title: "Open Tasks", value: viewModel.openTasks)
-                        DashboardTile(title: "Completed Tasks", value: viewModel.completedTasks)
+                        DashboardTile(title: "Total Projects", value: dashboardViewModel.totalProjects)
+                        DashboardTile(title: "Active Projects", value: dashboardViewModel.activeProjects)
+                        DashboardTile(title: "Completed Projects", value: dashboardViewModel.completedProjects)
+                        DashboardTile(title: "Total Tasks", value: dashboardViewModel.totalTasks)
+                        DashboardTile(title: "Open Tasks", value: dashboardViewModel.openTasks)
+                        DashboardTile(title: "Completed Tasks", value: dashboardViewModel.completedTasks)
                     }
                 }
                 .padding()
             }
         }
-        .task {
-            await viewModel.fetchStats()
+        .onAppear {
+           Task {
+               await dashboardViewModel.fetchStats()
+           }
         }
     }
 }
@@ -64,5 +66,5 @@ struct DashboardTile: View {
 }
 
 #Preview {
-    DashboardView()
+    DashboardView(dashboardViewModel: DashboardViewModel(dataStore: FirebaseDataStore()))
 }
