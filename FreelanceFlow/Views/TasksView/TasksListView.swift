@@ -31,6 +31,9 @@ struct TasksListView: View {
              }
         }
         .scrollContentBackground(.hidden)
+        .onAppear{
+            viewModel.fetchTasks()
+        }
     }
 }
 

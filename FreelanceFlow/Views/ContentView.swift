@@ -12,6 +12,8 @@ struct ContentView: View {
     private let clientListViewModel = ClientListViewModel(dataStore: FirebaseDataStore())
 
         var body: some View {
+            NavigationStack{
+                
             VStack(spacing: 0) {
                 HStack {
                     Text("Freelance Flow")
@@ -49,6 +51,7 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
+            }
             }
         }
 

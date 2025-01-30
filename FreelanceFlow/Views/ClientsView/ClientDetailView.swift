@@ -11,6 +11,7 @@ import SwiftUI
 struct ClientDetailView: View {
     let clientId: String
     @StateObject var viewModel : ClientDetailViewModel
+    @Environment(\.presentationMode) var presentationMode
 
     init(clientId: String) {
         self.clientId = clientId
@@ -71,15 +72,32 @@ struct ClientDetailView: View {
                                     Text("- \(tag)")
                                 }
                             }
+
+                            Button(action: deleteClient) {
+                                Text("Usuń klienta")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.red)
+                                    .cornerRadius(10)
+                            }
                         }
                         .padding()
                         .background(Color.primary.opacity(0.1))
                         .cornerRadius(10)
-               
                     }
                     Spacer()
                 }
                 .padding()
+            }
+        }
+    }
+
+    private func deleteClient() {
+        viewModel.dataStore.deleteClient(id: clientId) { success in
+            if success {
+                presentationMode.wrappedValue.dismiss()
+            } else {
+                viewModel.error = "Failed to delete client."
             }
         }
     }

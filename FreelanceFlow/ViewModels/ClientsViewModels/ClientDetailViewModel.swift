@@ -10,10 +10,10 @@ import Foundation
 
 class ClientDetailViewModel : ObservableObject {
     @Published var client: Client?
-     @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = false
     @Published var error: String = ""
 
-    private let dataStore : DataStore
+    let dataStore: DataStore
     private let clientId: String
 
     init(dataStore: DataStore, clientId: String) {
@@ -22,15 +22,30 @@ class ClientDetailViewModel : ObservableObject {
         fetchClient()
     }
 
-     func fetchClient(){
-         isLoading = true
-          dataStore.fetchClient(id: clientId) { [weak self] client in
-             self?.isLoading = false
-            if let client = client {
-                self?.client = client
-              } else {
-                  self?.error = "Failed to fetch client with id \(self?.clientId ?? "")"
+    func fetchClient() {
+        isLoading = true
+        dataStore.fetchClient(id: clientId) { [weak self] client in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+                if let client = client {
+                    self?.client = client
+                } else {
+                    self?.error = "Failed to fetch client with id \(self?.clientId ?? "")"
+                }
             }
-         }
-   }
+        }
+    }
+
+    func deleteClient(completion: @escaping (Bool) -> Void) {
+        dataStore.deleteClient(id: clientId) { [weak self] success in
+            DispatchQueue.main.async {
+                if success {
+                    completion(true)
+                } else {
+                    self?.error = "Failed to delete client."
+                    completion(false)
+                }
+            }
+        }
+    }
 }
