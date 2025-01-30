@@ -10,7 +10,8 @@ import SwiftUI
 
 struct TaskDetailView: View {
     let taskId: String
-    @StateObject var viewModel : TaskDetailViewModel
+    @StateObject var viewModel: TaskDetailViewModel
+    @Environment(\.presentationMode) var presentationMode
 
     init(taskId: String) {
         self.taskId = taskId
@@ -46,10 +47,7 @@ struct TaskDetailView: View {
                                     .font(.headline)
                                 Text(description)
                                     .padding(.vertical, 5)
-                                    .frame(
-                                        maxWidth: .infinity,
-                                        alignment: .leading
-                                    )
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             
                             Text("Status: \(task.status.rawValue)")
@@ -76,6 +74,14 @@ struct TaskDetailView: View {
                                     }
                                 }
                             }
+
+                            Button(action: deleteTask) {
+                                Text("Usuń zadanie")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.red)
+                                    .cornerRadius(10)
+                            }
                         }
                         .padding()
                         .background(Color.primary.opacity(0.1))
@@ -84,6 +90,14 @@ struct TaskDetailView: View {
                     Spacer()
                 }
                 .padding()
+            }
+        }
+    }
+
+    private func deleteTask() {
+        viewModel.deleteTask { success in
+            if success {
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }

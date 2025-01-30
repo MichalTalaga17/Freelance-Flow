@@ -13,7 +13,6 @@ struct ClientsView: View {
     @State private var isShowingAddClientView = false
 
         var body: some View {
-            NavigationView { // Add Navigation view
                 ZStack {
                     ClientsListView(viewModel: viewModel)
                     VStack {
@@ -37,8 +36,8 @@ struct ClientsView: View {
                             }
                         }
                     }
+                    
                 }
-            }
         }
     }
 
@@ -46,3 +45,4 @@ struct ClientsView: View {
     ClientsView(
         viewModel: ClientListViewModel(dataStore: FirebaseDataStore()))
 }
+

@@ -45,6 +45,8 @@ struct ClientsListView: View {
                     viewModel.fetchClients()
                 }
             }
+        }.onAppear{
+            viewModel.fetchClients()
         }
     }
 }
